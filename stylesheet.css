@@ -1,0 +1,45 @@
+body {
+  font-family: 'Playfair Display', serif;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+h1, h2 {
+  position: relative;
+  text-align: center;
+}
+h1 {
+    font-size: 3em;
+}
+.row {
+  padding-right: 8em;
+  padding-left: 8em;
+  padding-bottom: 5em;
+}
+#degrees {
+  text-align: right;
+}
+#degrees, #units {
+  font-size: 2em;
+}
+#weather-image {
+  width: 15em;
+  height: 15em;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -45px;
+  margin-left: -100px;
+}
+button {
+  position: relative;
+  left: 40%;
+  bottom: 4.5em;
+}
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
