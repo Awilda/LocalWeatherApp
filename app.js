@@ -30,7 +30,7 @@ $(document).ready(function() {
       var rainImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/rain.svgz?1'>";
       var fogImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/fog.svgz?1'>";
       var windImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/wind.svgz?1'>";
-      var clearNightImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/clear-night.svgz?1'>";
+      var clearNightImg = "Images/clear-night.png";
 
       $.getJSON(weatherData, function(data) {
         var temp = data.main.temp;
@@ -45,7 +45,7 @@ $(document).ready(function() {
         } else if (skyView === "Clear" && hour < 17) {
           $('#weather-image').html(sunImg);
         } else if (skyView === "Clear" && hour > 17) {
-          $('#weather-image').html(clearNightImg);
+          $('#weather-image').html("<img src='clearNightImg'>");
         } else if (skyView === "Snow") {
           $('#weather-image').html(snowImg);
         } else if (skyView === "Fog") {
