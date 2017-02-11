@@ -23,14 +23,14 @@ $(document).ready(function() {
       var hour = date.getHours();
 
       //  Images
-      var cloudImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/cloudy.svgz?1'>";
-      var partcloudImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/partly-cloudy.svgz?1'>"
-      var sunImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/sunny.svgz?1'>";
-      var snowImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/snow.svgz?1'>";
-      var rainImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/rain.svgz?1'>";
-      var fogImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/fog.svgz?1'>";
-      var windImg = "<img src='https://weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/wind.svgz?1'>";
-      var clearNightImg = "Images/clear-night.png";
+      var cloudImg = "<img src='Images/cloudy.png'>";
+      var partcloudImg = "<img src='Images/partly-cloudy.png'>"
+      var sunImg = "<img src='Images/sunny.png'>";
+      var snowImg = "<img src='Images/snow.png'>";
+      var rainImg = "<img src='Images/rain.png'>";
+      var fogImg = "<img src='Images/fog.png'>";
+      var windImg = "<img src='Images/wind.png'>";
+      var clearNightImg = "<img src='Images/clear-night.png'>";
 
       $.getJSON(weatherData, function(data) {
         var temp = data.main.temp;
@@ -45,7 +45,7 @@ $(document).ready(function() {
         } else if (skyView === "Clear" && hour < 17) {
           $('#weather-image').html(sunImg);
         } else if (skyView === "Clear" && hour > 17) {
-          $('#weather-image').html("<img src='clearNightImg'>");
+          $('#weather-image').html(clearNightImg);
         } else if (skyView === "Snow") {
           $('#weather-image').html(snowImg);
         } else if (skyView === "Fog") {
