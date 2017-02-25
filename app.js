@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  $.get("http://ipinfo.io", function(data) {
-    $("#location").html(data.city + ", " + data.region);
-  }, "jsonp");
  
   var weatherData, lat, lon;
 
