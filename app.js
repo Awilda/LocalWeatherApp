@@ -2,11 +2,7 @@ $(document).ready(function() {
   $.get("http://ipinfo.io", function(data) {
     $("#location").html(data.city + ", " + data.region);
   }, "jsonp");
-
-  $("button").click(function() {
-    $("#units").html("&#x2103");
-  });
-  
+ 
   var weatherData, lat, lon;
 
   //   Get Geolocation
@@ -16,8 +12,6 @@ $(document).ready(function() {
       lon = position.coords.longitude;
 
       weatherData = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=020078e92c1f85276822a658ef17b9ac";
-
-      var weatherMetric = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=020078e92c1f85276822a658ef17b9ac"
 
       var date = new Date();
       var hour = date.getHours();
@@ -36,7 +30,19 @@ $(document).ready(function() {
         var temp = data.main.temp;
         var skyView = data.weather[0].main;
 
-        $('#degrees').html(temp);
+      $('#degrees').html(parseInt(temp));
+        
+      $("button").click(function() {
+        if (unitConvert === false) {
+          $("#units").html("&#x2103");
+          $('#degrees').html(parseInt(celsius));  
+            unitConvert = true;
+        } else {
+          $("#units").html("&#8457");
+          $('#degrees').html(parseInt(temp));
+            unitConvert = false;
+        }
+      });
 
         if (skyView === "Clouds") {
           $('#weather-image').html(cloudImg);
