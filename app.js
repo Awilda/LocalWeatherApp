@@ -8,7 +8,7 @@ $(document).ready(function() {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
 
-      weatherData = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=020078e92c1f85276822a658ef17b9ac";
+      weatherData = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=020078e92c1f85276822a658ef17b9ac";
 
       var date = new Date();
       var hour = date.getHours();
